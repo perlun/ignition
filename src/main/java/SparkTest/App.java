@@ -9,6 +9,7 @@ import java.util.Date;
 import com.google.gson.Gson;
 import groovy.lang.GroovyShell;
 import groovy.lang.Script;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +17,13 @@ public class App {
     public static void main(String[] args)
         throws Exception
     {
-        new App().runGroovyExample();
+        if (args.length > 0 && args[0] == "groovy") {
+            System.out.println("Running Groovy-based engine");
+        }
+        else {
+            System.out.println("Running JavaScript-based engine");
+            new App().runJavascriptExample();
+        }
     }
 
     private void runJavascriptExample()

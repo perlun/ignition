@@ -9,8 +9,15 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 
-task execute(type:JavaExec) {
-   main = "SparkTest.App"
+task executeGroovy(type:JavaExec) {
+   main = 'SparkTest.App'
+   classpath = sourceSets.main.runtimeClasspath
+
+   args 'groovy'
+}
+
+task executeJs(type:JavaExec) {
+   main = 'SparkTest.App'
    classpath = sourceSets.main.runtimeClasspath
 }
 
