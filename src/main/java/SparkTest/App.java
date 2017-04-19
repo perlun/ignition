@@ -40,12 +40,14 @@ public class App {
         // - If the engine is already created, and we either read + eval on each request _or_ do it once (on startup), we go down to 0-1 ms per request for a hello world example.
         //
         // This is pretty impressive given that we are talking about a Java -> JS -> Java round trip.
-        engine.eval(new FileReader("api/hello.js"));
-        Invocable invocable = (Invocable) engine;
 
         before("/*", (req, res) -> { req.attribute("timeStarted", new Date()); });
         get("/*", (req, res) -> {
             res.type("application/json");
+
+            engine.eval(new FileReader("api/hello.js"));
+            Invocable invocable = (Invocable) engine;
+
             return invocable.invokeFunction("get", req, res);
         }, gson::toJson);
         after("/*", (req, res) -> {
