@@ -3,6 +3,7 @@ package SparkTest;
 import static spark.Spark.*;
 
 import javax.script.*;
+
 import java.io.FileReader;
 import java.util.Date;
 
@@ -19,6 +20,7 @@ public class App {
     {
         if (args.length > 0 && args[0] == "groovy") {
             System.out.println("Running Groovy-based engine");
+            new App().runGroovyExample();
         }
         else {
             System.out.println("Running JavaScript-based engine");

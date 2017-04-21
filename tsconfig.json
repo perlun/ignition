@@ -1,2 +1,13 @@
 {
+    "compilerOptions": {
+        "module": "system",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "api/hello.js",
+        "sourceMap": false
+    },
+    "include": [
+        "api/**/*"
+    ]
 }

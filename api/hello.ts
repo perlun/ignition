@@ -1,18 +1,14 @@
-interface IRequest {
-    pathInfo(): String;
-}
+function get(request: SparkRequest, response: SparkResponse) {
+    return sql(conn => {
+        // Example #1: If we want to convert some fields or anything in the output.
+        // return h.select("select * from actor").stream().map((row: Map<String, Object>) => {
+        //     return {
+        //         country: row['country'],
+        //         id: row['id']
+        //     }
+        // }).collect(Collectors.toList());
 
-function get(request: IRequest, response) {
-    this.counter++;
-
-    return {
-        path: request.pathInfo(),
-        count: this.counter || 0,
-        this: this.toString(),
-        spam: 43
-    }
-}
-
-function _helper() {
-    return 42;
+        // Example #2: A straight return of the result set.
+        return conn.select("select * from actor");
+    });
 }
