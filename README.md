@@ -1,4 +1,4 @@
-# spark-test
+# ignition
 
 This is a little experiment I made playing around with Spark (http://sparkjava.com).
 
