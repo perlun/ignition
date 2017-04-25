@@ -2,7 +2,7 @@ var DBI = Java.type('org.skife.jdbi.v2.DBI');
 var System = Java.type('java.lang.System');
 var Collectors = Java.type('java.util.stream.Collectors');
 
-function sql(callback: (h: Handle) => any) {
+function sql(callback: (h: Handle) => Object): Object {
     var h: Handle;
 
     try {
