@@ -5,7 +5,7 @@ const JavaDate = Java.type("java.util.Date");
 const JavaString = Java.type("java.lang.String");
 
 const gson = new Gson();
-const logger = LoggerFactory.getLogger(this.getClass());
+const logger = LoggerFactory.getLogger("app.js");
 
 Spark.before("/*", function(req: any, res: any) { req.attribute("timeStarted", new JavaDate()); });
 Spark.get("/*", function(req: any, res: any) {
