@@ -3,6 +3,7 @@
         "module": "amd",
         "noImplicitAny": true,
         "noImplicitReturns": true,
+        "noUnusedLocals": true,
         "removeComments": true,
         "preserveConstEnums": true,
         "outFile": "bin/app.js",
