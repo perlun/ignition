@@ -1,0 +1,19 @@
+{
+ "name": "my-application",
+ "version": "0.0.1",
+ "tsjava": {
+   "classpath": [
+     "target/**/*.jar"
+   ],
+   "packages": [
+     "java.util.*",
+     "java.util.function.*",
+     "java.math.*"
+   ],
+   "classes": [
+      "java.lang.Boolean",
+      "java.lang.Long"
+   ],
+   "tsJavaModulePath": "globals.d.ts"
+ }
+}
